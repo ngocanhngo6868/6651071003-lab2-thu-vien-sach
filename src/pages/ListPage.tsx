@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { fetchBooks } from '../api'
 import type { Book } from '../types'
 import { truncateText } from '../utils'
+import BooksChart from '../components/BooksChart'
 
 export default function ListPage() {
   const [books, setBooks] = useState<Book[]>([])
@@ -51,6 +52,7 @@ export default function ListPage() {
   </label>
   <p className="text-sm text-gray-700">Hiển thị {filtered.length} / {books.length} sách</p>
 </div>
+<BooksChart books={filtered} />
       <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {books.map((b) => (
           <li key={b.id} className="rounded-lg border p-4 shadow-sm">
