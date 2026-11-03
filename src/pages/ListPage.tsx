@@ -57,27 +57,36 @@ export default function ListPage() {
         )}
       </div>
 
-      {loading && <p className="text-gray-800">Đang tải...</p>}
+      {loading && (
+  <>
+    <div className="mb-6 h-[21rem] rounded-lg border bg-gray-50" aria-hidden="true" />
+    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
+      {Array.from({ length: 6 }, (_, i) => (
+        <li key={i} className="h-72 animate-pulse rounded-lg border bg-gray-100" />
+      ))}
+    </ul>
+  </>
+)}
       {error && <p className="text-red-700">{error}</p>}
 
       {!loading && !error && (
         <>
-          <Suspense fallback={<p className="mb-6 text-sm text-gray-700">Đang tải biểu đồ...</p>}>
-            <BooksChart books={filtered} />
-          </Suspense>
+          <Suspense fallback={<div className="mb-6 h-[21rem] rounded-lg border bg-gray-50" aria-hidden="true" />}>
+                 <BooksChart books={filtered} />
+            </Suspense>
 
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((b, i) => (
               <li key={b.id} className="rounded-lg border p-4 shadow-sm">
                 {b.coverId && (
                   <img
-                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-S.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-M.jpg`}
                     alt={`Bìa sách ${b.title}`}
-                    loading={i < 2 ? 'eager' : 'lazy'}
-                    width={200}
-                    height={192}
-                    className="mb-3 h-48 w-full object-contain"
-                  />
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    width={112}
+                    height={160}
+                    className="mx-auto mb-3 h-40 w-28 object-contain"
+                    />
                 )}
                 <Link to={`/item/${b.id}`} className="font-semibold text-brand-dark hover:underline">
                   {truncateText(b.title, 60)}
