@@ -1,8 +1,13 @@
+import { Route, Routes } from 'react-router-dom'
+import ListPage from './pages/ListPage'
+import DetailPage from './pages/DetailPage'
+
 function App() {
   return (
-    <h1 className="p-8 text-3xl font-bold text-brand">
-      Thư viện sách
-    </h1>
+    <Routes>
+      <Route path="/" element={<ListPage />} />
+      <Route path="/item/:id" element={<DetailPage />} />
+    </Routes>
   )
 }
 
