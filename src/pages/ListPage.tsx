@@ -80,7 +80,7 @@ export default function ListPage() {
               <li key={b.id} className="rounded-lg border p-4 shadow-sm">
                 {b.coverId && (
                   <img
-                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-M.jpg`}
+                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-S.jpg`}
                     alt={`Bìa sách ${b.title}`}
                     loading={i === 0 ? 'eager' : 'lazy'}
                     width={112}
