@@ -16,7 +16,7 @@ interface OpenLibraryResponse {
 
 export async function fetchBooks(query: string = 'programming'): Promise<Book[]> {
   const fields = 'key,title,author_name,first_publish_year,number_of_pages_median,cover_i,subject'
-  const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=30&fields=${fields}`
+  const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=24&fields=${fields}`
   const res = await fetch(url)
   if (!res.ok) throw new Error('Không tải được dữ liệu')
   const data: OpenLibraryResponse = await res.json()
