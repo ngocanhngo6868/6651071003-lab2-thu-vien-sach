@@ -1,23 +1,25 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchBooks } from '../api'
+import booksData from '../data/books.json'
 import type { Book } from '../types'
 import { truncateText } from '../utils'
 
 const BooksChart = lazy(() => import('../components/BooksChart'))
+const initialBooks = booksData as Book[]
 
 export default function ListPage() {
-  const [books, setBooks] = useState<Book[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const [books, setBooks] = useState<Book[]>(initialBooks)
   const [yearFrom, setYearFrom] = useState<number>(1900)
   const [yearTo, setYearTo] = useState<number>(2026)
 
   useEffect(() => {
+    // Làm mới dữ liệu từ Open Library ở nền; lỗi thì giữ dữ liệu có sẵn
     fetchBooks()
-      .then(setBooks)
-      .catch((e: Error) => setError(e.message))
-      .finally(() => setLoading(false))
+      .then((fresh) => {
+        if (fresh.length >= 20) setBooks(fresh)
+      })
+      .catch(() => {})
   }, [])
 
   const filtered = books.filter(
@@ -50,54 +52,36 @@ export default function ListPage() {
             className="mt-1 w-28 rounded border border-gray-400 px-2 py-1"
           />
         </label>
-        {!loading && !error && (
-          <p className="text-sm text-gray-700">
-            Hiển thị {filtered.length} / {books.length} sách
-          </p>
-        )}
+        <p className="text-sm text-gray-700">
+          Hiển thị {filtered.length} / {books.length} sách
+        </p>
       </div>
 
-      {loading && (
-  <>
-    <div className="mb-6 h-[21rem] rounded-lg border bg-gray-50" aria-hidden="true" />
-    <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-busy="true">
-      {Array.from({ length: 6 }, (_, i) => (
-        <li key={i} className="h-72 animate-pulse rounded-lg border bg-gray-100" />
-      ))}
-    </ul>
-  </>
-)}
-      {error && <p className="text-red-700">{error}</p>}
+      <Suspense fallback={<div className="mb-6 h-[21rem] rounded-lg border bg-gray-50" aria-hidden="true" />}>
+        <BooksChart books={filtered} />
+      </Suspense>
 
-      {!loading && !error && (
-        <>
-          <Suspense fallback={<div className="mb-6 h-[21rem] rounded-lg border bg-gray-50" aria-hidden="true" />}>
-                 <BooksChart books={filtered} />
-            </Suspense>
-
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((b, i) => (
-              <li key={b.id} className="rounded-lg border p-4 shadow-sm">
-                {b.coverId && (
-                  <img
-                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-S.jpg`}
-                    alt={`Bìa sách ${b.title}`}
-                    loading={i === 0 ? 'eager' : 'lazy'}
-                    width={112}
-                    height={160}
-                    className="mx-auto mb-3 h-40 w-28 object-contain"
-                    />
-                )}
-                <Link to={`/item/${b.id}`} className="font-semibold text-brand-dark hover:underline">
-                  {truncateText(b.title, 60)}
-                </Link>
-                <p className="text-sm text-gray-700">{b.author}</p>
-                <p className="text-sm text-gray-700">{b.year ?? 'Chưa rõ năm'}</p>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {filtered.map((b, i) => (
+          <li key={b.id} className="rounded-lg border p-4 shadow-sm">
+            {b.coverId && (
+              <img
+                src={`https://covers.openlibrary.org/b/id/${b.coverId}-M.jpg`}
+                alt={`Bìa sách ${b.title}`}
+                loading={i < 2 ? 'eager' : 'lazy'}
+                width={112}
+                height={160}
+                className="mx-auto mb-3 h-40 w-28 object-contain"
+              />
+            )}
+            <Link to={`/item/${b.id}`} className="font-semibold text-brand-dark hover:underline">
+              {truncateText(b.title, 60)}
+            </Link>
+            <p className="text-sm text-gray-700">{b.author}</p>
+            <p className="text-sm text-gray-700">{b.year ?? 'Chưa rõ năm'}</p>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }

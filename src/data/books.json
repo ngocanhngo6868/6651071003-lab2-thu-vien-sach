@@ -1,0 +1,377 @@
+[
+  {
+    "id": "OL4617640W",
+    "title": "The C Programming Language",
+    "author": "Brian W. Kernighan",
+    "year": 1978,
+    "pages": 274,
+    "coverId": 6684943,
+    "subjects": [
+      "C (Computer program language)",
+      "Linguagem De Programacao (Outras)",
+      "C (programmeertaal)"
+    ]
+  },
+  {
+    "id": "OL28215322W",
+    "title": "Aplikasi Analisis Multivariate Dengan Program IBM SPSS 25 (9th ed)",
+    "author": "Imam ghozali, 2018",
+    "year": 2018,
+    "pages": null,
+    "coverId": 14911282,
+    "subjects": []
+  },
+  {
+    "id": "OL53184W",
+    "title": "The C++ programming language",
+    "author": "Bjarne Stroustrup",
+    "year": 1986,
+    "pages": 700,
+    "coverId": 136583,
+    "subjects": [
+      "C++ (Computer program language)",
+      "C++ (Computer programming language)",
+      "C (Programmiersprache)"
+    ]
+  },
+  {
+    "id": "OL257263W",
+    "title": "The art of computer programming",
+    "author": "Donald Knuth",
+    "year": 1922,
+    "pages": 640,
+    "coverId": 136600,
+    "subjects": [
+      "Computer programming",
+      "Computer algorithms",
+      "Electronic digital computers"
+    ]
+  },
+  {
+    "id": "OL9305390W",
+    "title": "Object-oriented Programming with C++",
+    "author": "E. Balagurusamy",
+    "year": 1997,
+    "pages": 624,
+    "coverId": 10420384,
+    "subjects": [
+      "C++ (Computer program language)",
+      "Object-oriented programming (Computer science)",
+      "Programmation orientée objet (Informatique)"
+    ]
+  },
+  {
+    "id": "OL2784126W",
+    "title": "Programming Python",
+    "author": "Mark Lutz",
+    "year": 1996,
+    "pages": 1584,
+    "coverId": 805644,
+    "subjects": [
+      "Python (Computer program language)",
+      "Qa76.73.p98 l88 2001",
+      "Qa 76.73 p98 l875 2001"
+    ]
+  },
+  {
+    "id": "OL30906747W",
+    "title": "Core Python Programming",
+    "author": "R. Nageswara Rao",
+    "year": 2016,
+    "pages": null,
+    "coverId": 13192647,
+    "subjects": []
+  },
+  {
+    "id": "OL16557740W",
+    "title": "The Program",
+    "author": "Suzanne Young",
+    "year": 2013,
+    "pages": 432,
+    "coverId": 7441541,
+    "subjects": [
+      "Dystopian",
+      "Suicide",
+      "Dystopian Fiction"
+    ]
+  },
+  {
+    "id": "OL22705232W",
+    "title": "Programming with Java",
+    "author": "E. Balagurusamy",
+    "year": 2001,
+    "pages": 471,
+    "coverId": 10487733,
+    "subjects": [
+      "Computers internet programming java general"
+    ]
+  },
+  {
+    "id": "OL27275831W",
+    "title": "Programming in ANSI C",
+    "author": "E. Balagurusamy",
+    "year": 1994,
+    "pages": 549,
+    "coverId": 12597885,
+    "subjects": [
+      "C (Computer program language)",
+      "Computer programming",
+      "Object-oriented programming (Computer science)"
+    ]
+  },
+  {
+    "id": "OL3267304W",
+    "title": "Structure and Interpretation of Computer Programs (SICP)",
+    "author": "Harold Abelson",
+    "year": 1985,
+    "pages": 542,
+    "coverId": 149338,
+    "subjects": [
+      "Computer programming",
+      "LISP (Computer program language)",
+      "mirror"
+    ]
+  },
+  {
+    "id": "OL7943176W",
+    "title": "C++",
+    "author": "Paul J. Deitel",
+    "year": 1996,
+    "pages": 1104,
+    "coverId": 15111450,
+    "subjects": [
+      "Java (Computer program language)",
+      "C++ (Computer program language)",
+      "C (Computer program language)"
+    ]
+  },
+  {
+    "id": "OL8221396W",
+    "title": "C++ Programming",
+    "author": "D. S. Malik",
+    "year": 2004,
+    "pages": 1560,
+    "coverId": 762861,
+    "subjects": [
+      "C++ (Computer program language)",
+      "C plus plus (computer program language)",
+      "Data structures (Computer science)"
+    ]
+  },
+  {
+    "id": "OL2784125W",
+    "title": "Learning Python",
+    "author": "Mark Lutz",
+    "year": 1999,
+    "pages": 591,
+    "coverId": 1312568,
+    "subjects": [
+      "Python (Langage de programmation)",
+      "Python (linguagem de programação)",
+      "Python (Computer program language)"
+    ]
+  },
+  {
+    "id": "OL3233592W",
+    "title": "C programming",
+    "author": "K. N. King",
+    "year": 1996,
+    "pages": 824,
+    "coverId": 252635,
+    "subjects": [
+      "C (Computer program language)",
+      "Computer programming"
+    ]
+  },
+  {
+    "id": "OL4085889W",
+    "title": "Microprocessors and interfacing",
+    "author": "Douglas V. Hall",
+    "year": 1900,
+    "pages": 573,
+    "coverId": 9089229,
+    "subjects": [
+      "Computer interfaces",
+      "Microprocessors",
+      "Programming"
+    ]
+  },
+  {
+    "id": "OL1753981W",
+    "title": "C how to program",
+    "author": "Harvey M. Deitel",
+    "year": 1992,
+    "pages": 1005,
+    "coverId": 14520000,
+    "subjects": [
+      "C (Computer program language)",
+      "C[plus plus] (Computer program language)",
+      "Java (Computer program language)"
+    ]
+  },
+  {
+    "id": "OL1961693W",
+    "title": "Extreme programming explained",
+    "author": "Kent Beck",
+    "year": 1999,
+    "pages": 207,
+    "coverId": 5394766,
+    "subjects": [
+      "Development",
+      "Extreme programming",
+      "Programmation extrême"
+    ]
+  },
+  {
+    "id": "OL15444205W",
+    "title": "Eloquent Javascript",
+    "author": "Marijn Haverbeke",
+    "year": 2009,
+    "pages": 446,
+    "coverId": 7082166,
+    "subjects": [
+      "JavaScript (Computer program language)",
+      "Computer science",
+      "programming languages"
+    ]
+  },
+  {
+    "id": "OL1983429W",
+    "title": "Microprocessor Architecture, Programming, and Applications with the 8085",
+    "author": "Ramesh S. Gaonkar",
+    "year": 1996,
+    "pages": 820,
+    "coverId": 3807360,
+    "subjects": [
+      "Microprocessors",
+      "Computer architecture",
+      "Intel 8085 (Microprocessor)"
+    ]
+  },
+  {
+    "id": "OL7943173W",
+    "title": "C How to Program",
+    "author": "Paul J. Deitel",
+    "year": 2007,
+    "pages": 1008,
+    "coverId": 11603839,
+    "subjects": [
+      "Java (Computer program language)",
+      "C (Computer program language)",
+      "C++ (Computer program language)"
+    ]
+  },
+  {
+    "id": "OL12409294W",
+    "title": "Core Python programming",
+    "author": "Wesley Chun",
+    "year": 2006,
+    "pages": 1077,
+    "coverId": 7972455,
+    "subjects": [
+      "Python (Computer program language)"
+    ]
+  },
+  {
+    "id": "OL114676W",
+    "title": "Introduction to Java Programming",
+    "author": "Y. Daniel Liang",
+    "year": 1999,
+    "pages": 952,
+    "coverId": 85920,
+    "subjects": [
+      "Java (Computer program language)",
+      "Java (computer program language)",
+      "Computer programming"
+    ]
+  },
+  {
+    "id": "OL1701004W",
+    "title": "Programming Perl",
+    "author": "Larry Wall",
+    "year": 1990,
+    "pages": 645,
+    "coverId": 715250,
+    "subjects": [
+      "Perl (Computer program language)",
+      "Programming languages",
+      "Computadores (software)"
+    ]
+  },
+  {
+    "id": "OL8021453W",
+    "title": "Programming Pearls",
+    "author": "Jon Bentley",
+    "year": 1999,
+    "pages": 256,
+    "coverId": 135673,
+    "subjects": [
+      "Computer programming"
+    ]
+  },
+  {
+    "id": "OL15170814W",
+    "title": "Excel VBA Programming For Dummies",
+    "author": "John Walkenbach",
+    "year": 2004,
+    "pages": 408,
+    "coverId": 6428424,
+    "subjects": [
+      "Computer Technology",
+      "Nonfiction",
+      "Business, computer programs"
+    ]
+  },
+  {
+    "id": "OL58316W",
+    "title": "Beginning programming for dummies",
+    "author": "Wallace Wang",
+    "year": 1996,
+    "pages": 408,
+    "coverId": 520470,
+    "subjects": [
+      "Computer programming",
+      "QBasic (Computer program language)",
+      "Computer Technology"
+    ]
+  },
+  {
+    "id": "OL4439701W",
+    "title": "The now habit",
+    "author": "Neil Fiore",
+    "year": 1988,
+    "pages": 215,
+    "coverId": 8231849,
+    "subjects": [
+      "Psychological aspects",
+      "Psychological aspects of Work",
+      "Play"
+    ]
+  },
+  {
+    "id": "OL1753945W",
+    "title": "C++ how to program",
+    "author": "Harvey M. Deitel",
+    "year": 1992,
+    "pages": 1168,
+    "coverId": 15111375,
+    "subjects": [
+      "C++ (Computer program language)",
+      "C++ (Lenguaje de programación)",
+      "C plus plus (computer program language)"
+    ]
+  },
+  {
+    "id": "OL3372614W",
+    "title": "Beginning programming with Java for dummies",
+    "author": "Barry A. Burd",
+    "year": 2003,
+    "pages": 480,
+    "coverId": 520702,
+    "subjects": [
+      "Java (Computer program language)",
+      "Computer Technology",
+      "Nonfiction"
+    ]
+  }
+]
