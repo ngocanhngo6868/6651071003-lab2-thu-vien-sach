@@ -20,9 +20,6 @@ export default function ListPage() {
       .finally(() => setLoading(false))
   }, [])
 
-  if (loading) return <p className="p-8">Đang tải...</p>
-  if (error) return <p className="p-8 text-red-700">{error}</p>
-
   const filtered = books.filter(
     (b) => b.year !== null && b.year >= yearFrom && b.year <= yearTo,
   )
@@ -53,36 +50,45 @@ export default function ListPage() {
             className="mt-1 w-28 rounded border border-gray-400 px-2 py-1"
           />
         </label>
-        <p className="text-sm text-gray-700">
-          Hiển thị {filtered.length} / {books.length} sách
-        </p>
+        {!loading && !error && (
+          <p className="text-sm text-gray-700">
+            Hiển thị {filtered.length} / {books.length} sách
+          </p>
+        )}
       </div>
 
-      <Suspense fallback={<p className="mb-6 text-sm text-gray-700">Đang tải biểu đồ...</p>}>
-        <BooksChart books={filtered} />
-      </Suspense>
+      {loading && <p className="text-gray-800">Đang tải...</p>}
+      {error && <p className="text-red-700">{error}</p>}
 
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((b) => (
-          <li key={b.id} className="rounded-lg border p-4 shadow-sm">
-            {b.coverId && (
-              <img
-               src={`https://covers.openlibrary.org/b/id/${b.coverId}-S.jpg`}
-                alt={`Bìa sách ${b.title}`}
-                loading="lazy"
-                width={200}
-                height={192}
-                className="mb-3 h-48 w-full object-contain"
-              />
-            )}
-            <Link to={`/item/${b.id}`} className="font-semibold text-brand-dark hover:underline">
-              {truncateText(b.title, 60)}
-            </Link>
-            <p className="text-sm text-gray-700">{b.author}</p>
-            <p className="text-sm text-gray-700">{b.year ?? 'Chưa rõ năm'}</p>
-          </li>
-        ))}
-      </ul>
+      {!loading && !error && (
+        <>
+          <Suspense fallback={<p className="mb-6 text-sm text-gray-700">Đang tải biểu đồ...</p>}>
+            <BooksChart books={filtered} />
+          </Suspense>
+
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filtered.map((b, i) => (
+              <li key={b.id} className="rounded-lg border p-4 shadow-sm">
+                {b.coverId && (
+                  <img
+                    src={`https://covers.openlibrary.org/b/id/${b.coverId}-S.jpg`}
+                    alt={`Bìa sách ${b.title}`}
+                    loading={i < 2 ? 'eager' : 'lazy'}
+                    width={200}
+                    height={192}
+                    className="mb-3 h-48 w-full object-contain"
+                  />
+                )}
+                <Link to={`/item/${b.id}`} className="font-semibold text-brand-dark hover:underline">
+                  {truncateText(b.title, 60)}
+                </Link>
+                <p className="text-sm text-gray-700">{b.author}</p>
+                <p className="text-sm text-gray-700">{b.year ?? 'Chưa rõ năm'}</p>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </main>
   )
 }
